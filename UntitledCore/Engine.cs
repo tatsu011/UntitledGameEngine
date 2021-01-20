@@ -7,11 +7,11 @@ namespace UntitledCore
     public class Engine
     {
         List<string> Log;
-        public Engine()
+        public Engine(EngineConfig config)
         {
             //Initialize
-            Raylib.InitWindow(800, 480, "Hello World");
-            Raylib.SetTargetFPS(60);
+            Raylib.InitWindow(config.Win_Width, config.Win_Height, config.GameName);
+            Raylib.SetTargetFPS((int)config.RefreshRate);
             Log = new List<string>();
         }
 
